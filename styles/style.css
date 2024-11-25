@@ -1,0 +1,94 @@
+
+body{
+ margin: 0;
+ font-family: 'Montserrat', sans-serif;
+        
+   
+  }
+
+  #Game-container {
+    display:none;
+    width: 100vw;
+    padding: 20px 0px;
+    justify-content:center;
+    background-size: cover;
+  }
+
+  #game-screen {
+    display: none;
+    align-content: center;
+    padding: 20px 0px;
+    overflow: hidden;
+    position: relative;
+    background-image: url(images/game-image.jpg);
+    background-size: cover;
+    animation: slide 5s linear infinite;
+  }
+
+  @keyframes slide {
+    0% {
+      background-position: 0 -1000px;
+    }
+    95% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 50px;
+    }
+  }
+
+  #game-end {
+    display: none;
+  }
+
+  .arrows-img {
+    width: 150px;
+  }
+
+  body button {
+    font-size: 30px;
+    background-color: #870007;
+    color: #fff;
+    margin-top: 1%;
+    border: 0;
+    box-shadow: 0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  
+
+  .Game-start{
+    /*width: 100%;*/
+    min-height: 100vh;
+    background: #556983;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image:url("https://loremflickr.com/900/900/dog") ;
+    background-size: cover;
+    background-position: center;
+    /* object-fit: cover; */
+    background-repeat: no-repeat;
+    /* background-attachment: fixed ; */
+
+}
+.header-title{
+    margin: 0;
+    margin-bottom: 25px;
+font-weight: 700;
+font-size: 56px;
+line-height: 130%;
+color: white;
+}
+.header-subtitle{
+    margin: 0;
+font-weight: bold;
+font-size: 16px;
+line-height: 150%;
+text-transform: uppercase;
+color: white;
+letter-spacing: 0.2rem;
+/* text-align: center; */
+}
