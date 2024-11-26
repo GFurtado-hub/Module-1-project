@@ -79,3 +79,17 @@ body {
   cursor: pointer;
   border-radius: 50px;
 }
+
+
+
+#game-screen {
+  display: none;
+  width: 10%;
+  height: 10%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+#game-end {
+  display: none;
+}
