@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harry Potter IronHack Snitch Game</title>
     <link rel="stylesheet" href="styles/style.css">
+    <title>Harry Potter IronHack Snitch Game</title>
 </head>
 <body>
     <main>
         <div id="game-start" class="container">
-            <!-- Title Text -->
+            
             <div class="title-text">
                 <h1>Harry Potter <br> IronHack Snitch Game</h1>
             </div>
 
-            <!-- Left Text Block -->
+            
             <div class="left-text">
                 <p>You’re the new Gryffindor Seeker; <br>
                 during 60 sec you’ll have to <br>
@@ -24,45 +24,46 @@
                 Be careful, you only have 3 lives.</p>
             </div>
 
-            <!-- Right Text Block -->
+            
             <div class="right-text">
                 <p>Use the arrows <br> left ⬅ and ➡ right <br> to move Harry</p>
             </div>
 
-            <!-- Main Image -->
+            
             <img src="images/first-image.webp" alt="Main menu" class="main-img">
 
-            <!-- Start Button -->
+           
             <button id="start-button">START GAME</button>
         </div>
         
-        
-     
-        <!-- Game Screen (Initially Hidden) -->
   <div id="game-screen">
     <img src="images/game-image.jpeg" alt="game-screen" class="game-img" />
-                 <!-- Stats Section -->
-    <div class="stats">
+                 
+    <div class="game-stats">
         <h2>Stats</h2>
         <p>Score: <span id="score">0</span></p>
         <p>Lives: <span id="lives">3</span></p>
+
+    
       </div>
-    </div>
-  </div>
+      <!--<img src="images/harry.png" alt="harry" class="harry-styles" />
+    </div>-->
+  
 
 
-
-        <!--Game-End-->
-          <div id="game-end">
+ <div id="game-end">
             <img src="images/final-image.webp" alt="" class="logo-img" />
             <h1>Congratulations!</h1>
             <br />
             <button id="restart-button">Restart</button>
           </div>
     </main>
+
     <script src="js/game.js"></script>
     <script src="js/script.js"></script>
-    <script src="styles/style.css"></script>
-        
+    <script src="js/obstacle.js"></script>
+    <script src="js/player.js"></script>
+
+    
     </body>
     </html>
