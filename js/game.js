@@ -16,8 +16,8 @@ class Game {
         this.gameScreen,
         600,
         500,
-        75,
-        75,
+        60,
+        60,
         "./images/harry.png"
     );
     
@@ -87,7 +87,7 @@ class Game {
             
                 // Create a new obstacle based on a random probability
                 // when there is no other obstacles on the screen
-                if (Math.random() > 0.98 && this.obstacles.length < 1) {
+                if (Math.random() > 0.60 && this.obstacles.length < 2) {
                   this.obstacles.push(new Obstacle(this.gameScreen));
                 }
               }

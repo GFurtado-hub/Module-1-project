@@ -20,11 +20,11 @@ class Player {
     }
   
     move() {
-      // Update player's car position based on directionX and directionY
+      // Update harry's position based on directionX and directionY
       this.left += this.directionX;
       this.top += this.directionY;
   
-      // Ensure the player's car stays within the game screen
+      // Ensure the Harry stays within the game screen
       // handles left hand side
       if (this.left < 10) {
         this.left = 10;
@@ -45,7 +45,7 @@ class Player {
         this.top = this.gameScreen.offsetHeight - this.height - 10;
       }
   
-      // Update the player's car position on the screen
+      // Update the harry's position on the screen
       this.updatePosition();
     }
   
