@@ -6,6 +6,8 @@ window.onload = function () {
   
     startButton.addEventListener("click", function () {
       startGame();
+
+      
     });
   
     function startGame() {

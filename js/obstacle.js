@@ -1,10 +1,10 @@
 class Obstacle {
   constructor(gameScreen) {
       this.gameScreen = gameScreen;
-      // Random horizontal position, but always start at the top of the screen
+    
       this.left = 426 + Math.floor(Math.random() * (852 - 426));
   
-      this.top = 300; // Start at the top of the screen
+      this.top = 300; 
       this.width = 25;
       this.height = 25;
       this.element = document.createElement("img");
@@ -27,9 +27,9 @@ class Obstacle {
   }
 
   move() {
-      // Move the obstacle down by 5px
-      this.top += 6;
-      // Update the obstacle's position on the screen
+      
+      this.top += 5;
+      
       this.updatePosition();
   }
 }
