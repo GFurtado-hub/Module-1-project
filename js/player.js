@@ -20,32 +20,31 @@ class Player {
     }
   
     move() {
-      // Update harry's position based on directionX and directionY
+      
       this.left += this.directionX;
       this.top += this.directionY;
   
-      // Ensure the Harry stays within the game screen
-      // handles left hand side
+      
       if (this.left < 10) {
         this.left = 10;
       }
   
-      // handles top side
+      
       if (this.top < 10) {
         this.top = 10;
       }
   
-      // handles right hand side
+      
       if (this.left > this.gameScreen.offsetWidth - this.width - 10) {
         this.left = this.gameScreen.offsetWidth - this.width - 10;
       }
   
-      // handles bottom side
+      
       if (this.top > this.gameScreen.offsetHeight - this.height - 10) {
         this.top = this.gameScreen.offsetHeight - this.height - 10;
       }
   
-      // Update the harry's position on the screen
+      
       this.updatePosition();
     }
   
@@ -69,6 +68,9 @@ class Player {
         return false;
       }
     }
+
+
+
   
   
   }

@@ -110,5 +110,18 @@ body {
 
 #game-end {
   display: none;
+  align-content: center;
+  width: 1280px;
+  height: 720px;
+  padding: 20px 0px;
+  position: relative;
+  
+}
+
+.logo-img {
+  position: relative;
+  width: 100%; 
+  height: 100%; 
+  border-radius: 8px;
 }
 

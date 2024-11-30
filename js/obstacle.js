@@ -5,11 +5,11 @@ class Obstacle {
       this.left = 426 + Math.floor(Math.random() * (852 - 426));
   
       this.top = 300; 
-      this.width = 25;
-      this.height = 25;
+      this.width = 50;
+      this.height = 70;
       this.element = document.createElement("img");
 
-      this.element.src = "./images/bludger.png";  
+      this.element.src = "./images/bludger.webp";  
       this.element.style.position = "absolute";
       this.element.style.width = `${this.width}px`;
       this.element.style.height = `${this.height}px`;
@@ -33,3 +33,5 @@ class Obstacle {
       this.updatePosition();
   }
 }
+
+
