@@ -33,7 +33,6 @@ body {
   color: black;
   font-size: 1.5em;
   font-weight: bold;
-  
 
 }
 
@@ -49,6 +48,8 @@ body {
   padding: 5px; 
   border-radius: 50px; 
   line-height: 1.2; 
+  display: flex; /* Added to enable flexbox */
+ 
 }
 
 
@@ -125,3 +126,27 @@ body {
   border-radius: 8px;
 }
 
+#restart-button {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: orange;
+  border: none;
+  padding: 10px 20px;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+
+.final-text {
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  font-size: 1.5em;
+  font-weight: bold;
+}
