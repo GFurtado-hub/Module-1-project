@@ -29,7 +29,7 @@ class Snitch {
   
     
     move() {
-      this.top += 2; 
+      this.top += 8; 
       this.updatePosition();
     }
   }
