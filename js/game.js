@@ -21,6 +21,9 @@ class Game {
       60,
       "./images/harry.png"
     );
+    this.audio = document.getElementById("background-music");
+    this.menuAudio = document.getElementById("menu-music");
+  
   }
 
   start() {
@@ -28,6 +31,11 @@ class Game {
     this.gameScreen.style.width = `${this.width}px`;
     this.startScreen.style.display = "none";
     this.gameScreen.style.display = "block";
+    this.audio.volume = 0.5;
+    this.audio.play();
+    this.menuAudio.volume = 0.5
+    this.menuAudio.pause();
+
     this.gameIntervalId = setInterval(() => {
       this.gameLoop();
     }, this.gameLoopFrequency);
@@ -98,6 +106,7 @@ class Game {
   }
   
 
+  
   updateStats() {
     document.getElementById("score").textContent = this.score;
     document.getElementById("lives").textContent = this.lives;
@@ -118,6 +127,9 @@ class Game {
   checkGameOver() {
     if (this.lives === 0) {
       this.endGame();
+      this.audio.pause();
+      this.audio.currentTime = 0;
+      this.menuAudio.play();
     }
   }
 

@@ -4,33 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Harry Potter IronHack Snitch Game</title>
+    <title>HARRY POTTER IRONHACK SNITCH GAME</title>
 </head>
 <body>
     <main>
         <div id="game-start" class="container">
             
             <div class="title-text">
-                <h1>Harry Potter <br> IronHack Snitch Game</h1>
+                <h1>HARRY POTTER <br> IronHack Snitch Game</h1>
             </div>
 
             
-            <div class="left-text">
+            <div class="text">
                 <p>You’re the new Gryffindor Seeker; <br>
-                during 60 sec you’ll have to <br>
+                You’ll have to <br>
                 catch as many snitches as you <br>
                 can while avoiding enchanted <br>
                 bludgers! <br>
                 Be careful, you only have 3 lives.</p>
+                <p>Use the arrows <br> ⬅ ⬆ ➡ ⬇ <br> to move Harry</p>
             </div>
 
             
-            <div class="right-text">
-                <p>Use the arrows <br> left ⬅ and ➡ right <br> to move Harry</p>
-            </div>
+            
 
             
-            <img src="images/first-image.webp" alt="Main menu" class="main-img">
+            <img src="images/first-image.jpg" alt="Main menu" class="main-img">
 
            
             <button id="start-button">START GAME</button>
@@ -62,9 +61,26 @@
         <button id="restart-button">Restart</button>
     </div>
     
+    <audio id="quidditch-music" loop>
+        <source src="music/quidditch_world_cup.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="background-music" loop>
+        <source src="music/double_trouble.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
     
+    <audio id="menu-music" loop>
+        <source src="music/harry_potter_theme.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
     
     </main>
+
+   
+
+   
 
     <script src="js/obstacle.js"></script>
     <script src="js/player.js"></script>

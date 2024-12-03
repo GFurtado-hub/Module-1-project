@@ -1,5 +1,10 @@
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('../font/HARRYP__.TTF') format('woff2'),
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'MyCustomFont', sans-serif;
   background-color: #1b1b1b;
   color: #fff;
   margin: 0;
@@ -30,44 +35,35 @@ body {
   top: 1%;
   left: 50%;
   transform: translateX(-50%);
-  color: black;
-  font-size: 1.5em;
+  color: white;
+  font-size: 2em;
   font-weight: bold;
 
 }
 
 
-.left-text {
-  position: absolute;
-  top: 35%;
-  left: 2%;
+.text {
+position: absolute; 
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
   color: white;
-  font-size: 1.1em;
+  font-size: 1.3em;
   max-width: 200px;
-  background-color: rgba(0, 0, 0, 0.7); 
   padding: 5px; 
   border-radius: 50px; 
   line-height: 1.2; 
-  display: flex; /* Added to enable flexbox */
- 
+  display: center; /* Added to enable flexbox */
+  align-content: center;
+ justify-content: center;
 }
 
 
-.right-text {
-  position: absolute;
-  top: 35%;
-  right: 2%;
-  color: white;
-  font-size: 1.1em;
-  background-color: rgba(0, 0, 0, 0.7); 
-  max-width: 150px;
-  padding: 5px; 
-  border-radius: 50px; 
-  line-height: 1.2; 
-}
+
 
 
 #start-button {
+  font-family: 'MyCustomFont', sans-serif;
   position: absolute;
   bottom: 5%;
   left: 50%;
@@ -127,6 +123,7 @@ body {
 }
 
 #restart-button {
+  font-family: 'MyCustomFont', sans-serif;
   position: absolute;
   bottom: 5%;
   left: 50%;
