@@ -23,7 +23,8 @@ class Game {
     );
     this.audio = document.getElementById("background-music");
     this.menuAudio = document.getElementById("menu-music");
-     
+     this.collision1Music= document.getElementById('bludgers-music');
+     this.collision2Music= document.getElementById('snitch-music');
   }
 
   start() {
@@ -73,6 +74,9 @@ class Game {
         
         this.lives--;
         i--;
+
+        this.collision1Music.currentTime = 0; 
+      this.collision1Music.play();
   
       
       } else if (obstacle.top > this.height) {
@@ -80,6 +84,9 @@ class Game {
         this.obstacles.splice(i, 1);
         i--;
       }
+
+      
+
     }
   }
   
@@ -96,6 +103,8 @@ class Game {
        
         this.score++;
         i--;
+        this.collision2Music.currentTime = 0;
+        this.collision2Music.play();
   
       
       } else if (snitch.top > this.height) {
