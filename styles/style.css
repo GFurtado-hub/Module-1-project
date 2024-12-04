@@ -1,5 +1,10 @@
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('../font/HARRYP__.TTF') format('woff2'),
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family:'MyCustomFont' , sans-serif;
   background-color: #1b1b1b;
   color: #fff;
   margin: 0;
@@ -12,8 +17,8 @@ body {
 
 .container {
   position: relative;
-  width: 1280px; 
-  height: 720px; 
+  width: 1000px; 
+  height: 600px; 
   margin: auto;
 }
 
@@ -30,41 +35,29 @@ body {
   top: 1%;
   left: 50%;
   transform: translateX(-50%);
-  color: black;
+  color: white;
   font-size: 1.5em;
   font-weight: bold;
 
 }
 
 
-.left-text {
+.text {
   position: absolute;
-  top: 35%;
-  left: 2%;
-  color: white;
-  font-size: 1.1em;
-  max-width: 200px;
-  background-color: rgba(0, 0, 0, 0.7); 
-  padding: 5px; 
-  border-radius: 50px; 
-  line-height: 1.2; 
-  display: flex; /* Added to enable flexbox */
- 
-}
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.3em;
+    max-width: 200px;
+    padding: 5px;
+    border-radius: 50px;
+    line-height: 1.2;
+    display: center; 
+    align-content: center;
+   justify-content: center;
+  }
 
-
-.right-text {
-  position: absolute;
-  top: 35%;
-  right: 2%;
-  color: white;
-  font-size: 1.1em;
-  background-color: rgba(0, 0, 0, 0.7); 
-  max-width: 150px;
-  padding: 5px; 
-  border-radius: 50px; 
-  line-height: 1.2; 
-}
 
 
 #start-button {
@@ -72,7 +65,7 @@ body {
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: orange;
+  background-color:black;
   border: none;
   padding: 10px 20px;
   font-size: 2em;
@@ -84,6 +77,8 @@ body {
 #game-screen {
   display: none;
   align-content: center;
+  width: 1000px;
+  height: 600px;
   padding: 20px 0px;
   position: relative;
   background-size: cover;
@@ -112,8 +107,8 @@ body {
 #game-end {
   display: none;
   align-content: center;
-  width: 1280px;
-  height: 720px;
+  width: 1000px;
+  height: 600px;
   padding: 20px 0px;
   position: relative;
   

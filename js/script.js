@@ -1,4 +1,5 @@
 window.onload = function () {
+  const gameMusic = document.getElementById("game-music");
   const startButton = document.getElementById("start-button");
   const restartButton = document.getElementById("restart-button");
   let game;
@@ -7,10 +8,12 @@ window.onload = function () {
   });
   restartButton.addEventListener("click", function () {
     game.gameEndScreen.style.display = "none";
-    game.startScreen.style.display = "block";
-    game = new Game();
-    game.start();
+    game.startScreen.style.display = "block";  
+    game.audio.currentTime = 0;
+    game.menuAudio.play();
   });
+
+  
   function startGame() {
     console.log("start game");
     game = new Game();

@@ -4,8 +4,8 @@ class Game {
     this.gameScreen = document.getElementById("game-screen");
     this.gameEndScreen = document.getElementById("game-end");
     this.player = null;
-    this.height = 720;
-    this.width = 1280;
+    this.height = 600;
+    this.width = 1000;
     this.obstacles = [];
     this.snitch = [];
     this.score = 0;
@@ -21,6 +21,9 @@ class Game {
       60,
       "./images/harry.png"
     );
+    this.audio = document.getElementById("background-music");
+    this.menuAudio = document.getElementById("menu-music");
+     
   }
 
   start() {
@@ -28,6 +31,12 @@ class Game {
     this.gameScreen.style.width = `${this.width}px`;
     this.startScreen.style.display = "none";
     this.gameScreen.style.display = "block";
+    this.audio.volume = 0.5;
+    this.audio.play();
+    this.menuAudio.volume = 0.5
+    this.menuAudio.pause();
+
+
     this.gameIntervalId = setInterval(() => {
       this.gameLoop();
     }, this.gameLoopFrequency);
@@ -104,7 +113,7 @@ class Game {
   }
 
   spawnObstacles() {
-    if (Math.random() > 0.60 && this.obstacles.length < 2) {
+    if (Math.random() > 0.83 && this.obstacles.length < 2) {
       this.obstacles.push(new Obstacle(this.gameScreen));
     }
   }
@@ -118,6 +127,9 @@ class Game {
   checkGameOver() {
     if (this.lives === 0) {
       this.endGame();
+      this.audio.pause();  
+      this.audio.currentTime = 0;
+      this.menuAudio.play();
     }
   }
 
@@ -128,11 +140,10 @@ class Game {
     this.gameIsOver = true;
     this.gameScreen.style.display = "none";
     this.gameEndScreen.style.display = "block";
-
     document.getElementById("final-score").textContent = this.score;
+   
   }
+
+  
   
 }
-
-
-//TEST
