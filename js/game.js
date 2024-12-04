@@ -43,6 +43,26 @@ class Game {
     }, this.gameLoopFrequency);
   }
 
+  setDifficulty(level) {
+    if (level === "Easy") {
+      this.obstacleSpawnRate = 0.90; 
+      this.snitchSpawnRate = 0.50;  
+      this.obstacleSpeed = 2;       
+      this.lives = 5;               
+    } else if (level === "Medium") {
+      this.obstacleSpawnRate = 0.83;
+      this.snitchSpawnRate = 0.60;
+      this.obstacleSpeed = 4;
+      this.lives = 3;
+    } else if (level === "Hard") {
+      this.obstacleSpawnRate = 0.70; 
+      this.snitchSpawnRate = 0.70;  
+      this.obstacleSpeed = 6;       
+      this.lives = 2;               
+    }
+  }
+  
+
   gameLoop() {
     if (this.gameIsOver) {
       clearInterval(this.gameIntervalId);
@@ -122,16 +142,19 @@ class Game {
   }
 
   spawnObstacles() {
-    if (Math.random() > 0.83 && this.obstacles.length < 2) {
-      this.obstacles.push(new Obstacle(this.gameScreen));
+    if (Math.random() > this.obstacleSpawnRate && this.obstacles.length < 3) {
+      const obstacle = new Obstacle(this.gameScreen);
+      obstacle.speed = this.obstacleSpeed; 
+      this.obstacles.push(obstacle);
     }
   }
-
+  
   spawnSnitch() {
-    if (Math.random() > 0.60 && this.snitch.length < 1) {
+    if (Math.random() > this.snitchSpawnRate && this.snitch.length < 1) {
       this.snitch.push(new Snitch(this.gameScreen));
     }
   }
+  
 
   checkGameOver() {
     if (this.lives === 0) {

@@ -61,6 +61,7 @@ body {
 
 
 #start-button {
+  font-family:'MyCustomFont' , sans-serif;
   position: absolute;
   bottom: 5%;
   left: 50%;
@@ -122,6 +123,7 @@ body {
 }
 
 #restart-button {
+  font-family:'MyCustomFont' , sans-serif;
   position: absolute;
   bottom: 5%;
   left: 50%;
@@ -144,4 +146,43 @@ body {
   color: black;
   font-size: 1.5em;
   font-weight: bold;
+}
+
+#difficulty-selection {
+  position: absolute;
+  bottom: 15%; 
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+#difficulty-selection p {
+  font-family: 'MyCustomFont', sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.difficulty-button {
+  font-family: 'MyCustomFont', sans-serif;
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.difficulty-button:hover {
+  background-color: #444;
+}
+
+.difficulty-button.active {
+  background-color: #4caf50; 
+  color: white;
+  font-weight: bold;
+  transform: scale(1.1); 
 }
