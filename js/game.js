@@ -96,6 +96,7 @@ class Game {
 
         this.collision1Music.currentTime = 0; 
         this.collision1Music.play();
+        this.collision1Music.volume=0.3;
   
       } else if (obstacle.top > this.height) {
         obstacle.element.remove();
@@ -113,10 +114,12 @@ class Game {
       if (this.player.didCollide(snitch)) {
         snitch.element.remove();
         this.snitch.splice(i, 1);
+
         this.score++;
         i--;
         this.collision2Music.currentTime = 0;
         this.collision2Music.play();
+        this.collision2Music.volume=0.3;
   
       } else if (snitch.top > this.height) {
         snitch.element.remove();

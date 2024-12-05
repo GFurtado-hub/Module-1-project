@@ -186,3 +186,55 @@ body {
   font-weight: bold;
   transform: scale(1.1); 
 }
+
+.textending {
+  color:white;
+  position: absolute;
+  text-align:center;
+  top:200%;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    min-height: 100vh;
+    padding: 0 10px;
+  }
+  .container {
+    width: 90%;
+    height: auto;
+  }
+  .main-img,
+  .game-img,
+  .logo-img {
+    width: 100%;
+    height: auto;
+  }
+  .title-text,
+  .final-text {
+    font-size: 1.2em;
+  }
+  .text {
+    font-size: 1em;
+    max-width: 150px;
+  }
+  #start-button,
+  #restart-button {
+    font-size: 1.5em;
+    padding: 8px 15px;
+  }
+  .difficulty-button {
+    font-size: 1em;
+    padding: 8px 15px;
+  }
+  #game-screen,
+  #game-end {
+    width: 90%;
+    height: auto;
+    padding: 10px 0;
+  }
+  .game-stats {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+}
