@@ -200,91 +200,43 @@ body {
   body {
     font-size: 14px;
     min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #F4F4F4;
-    overflow-x: hidden;
+    padding: 0 10px;
   }
   .container {
-    width: 100%;
-    max-width: 768px;
-    height: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    width: 90%;
+    height: auto;
   }
   .main-img,
   .game-img,
   .logo-img {
     width: 100%;
-    max-width: 300px;
     height: auto;
-    margin: 10px 0;
   }
   .title-text,
   .final-text {
-    font-size: 1.8em;
-    text-align: center;
-    margin: 10px 0;
-    word-wrap: break-word;
+    font-size: 1.2em;
   }
   .text {
     font-size: 1em;
-    max-width: 90%;
-    margin: 10px auto;
-    text-align: center;
+    max-width: 150px;
   }
   #start-button,
   #restart-button {
     font-size: 1.5em;
-    padding: 15px 20px;
-    margin: 10px 0;
-    width: 90%;
-    max-width: 300px;
-    border-radius: 8px;
+    padding: 8px 15px;
   }
   .difficulty-button {
     font-size: 1em;
-    padding: 10px 15px;
-    margin: 5px;
-    width: 70%;
-    max-width: 200px;
+    padding: 8px 15px;
   }
   #game-screen,
   #game-end {
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+    width: 90%;
+    height: auto;
+    padding: 10px 0;
   }
   .game-stats {
-    font-size: 1em;
-    width: 90%;
-    max-width: 500px;
-    text-align: center;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20 px;
-  }
-  html,
-  body {
-    height: 100%;
-  }
-  * {
-    box-sizing: border-box;
+    font-size: 0.9em;
+    padding: 8px;
   }
 }
