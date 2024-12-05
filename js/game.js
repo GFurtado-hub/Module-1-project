@@ -4,8 +4,8 @@ class Game {
     this.gameScreen = document.getElementById("game-screen");
     this.gameEndScreen = document.getElementById("game-end");
     this.player = null;
-    this.height = 720;
-    this.width = 1280;
+    this.height = 600;
+    this.width = 1000;
     this.obstacles = [];
     this.snitch = [];
     this.score = 0;
@@ -23,7 +23,8 @@ class Game {
     );
     this.audio = document.getElementById("background-music");
     this.menuAudio = document.getElementById("menu-music");
-  
+    this.collision1Music = document.getElementById('bludgers-music');
+    this.collision2Music = document.getElementById('snitch-music');
   }
 
   start() {
@@ -33,13 +34,36 @@ class Game {
     this.gameScreen.style.display = "block";
     this.audio.volume = 0.5;
     this.audio.play();
-    this.menuAudio.volume = 0.5
+    this.menuAudio.volume = 0.5;
     this.menuAudio.pause();
 
     this.gameIntervalId = setInterval(() => {
       this.gameLoop();
     }, this.gameLoopFrequency);
   }
+
+  setDifficulty(level) {
+    if (level === "Easy") {
+      this.obstacleSpawnRate = 0.90; 
+      this.snitchSpawnRate = 0.50;  
+      this.obstacleSpeed = 2;       
+      this.lives = 5;               
+      this.numBludgers = 1; // Easy - 1 bludger
+    } else if (level === "Medium") {
+      this.obstacleSpawnRate = 0.83;
+      this.snitchSpawnRate = 0.60;
+      this.obstacleSpeed = 4;
+      this.lives = 3;
+      this.numBludgers = 2; // Medium - 2 bludgers
+    } else if (level === "Hard") {
+      this.obstacleSpawnRate = 0.70; 
+      this.snitchSpawnRate = 0.70;  
+      this.obstacleSpeed = 6;       
+      this.lives = 2;               
+      this.numBludgers = 3; // Hard - 3 bludgers
+    }
+  }
+  
 
   gameLoop() {
     if (this.gameIsOver) {
@@ -64,16 +88,15 @@ class Game {
       const obstacle = this.obstacles[i];
       obstacle.move();
   
-      
       if (this.player.didCollide(obstacle)) {
         obstacle.element.remove();
         this.obstacles.splice(i, 1);
-  
-        
         this.lives--;
         i--;
+
+        this.collision1Music.currentTime = 0; 
+        this.collision1Music.play();
   
-      
       } else if (obstacle.top > this.height) {
         obstacle.element.remove();
         this.obstacles.splice(i, 1);
@@ -81,22 +104,20 @@ class Game {
       }
     }
   }
-  
+
   checkCollisionsSnitch() {
     for (let i = 0; i < this.snitch.length; i++) {
       const snitch = this.snitch[i];
       snitch.move();
   
-      
       if (this.player.didCollide(snitch)) {
         snitch.element.remove();
         this.snitch.splice(i, 1);
-  
-       
         this.score++;
         i--;
+        this.collision2Music.currentTime = 0;
+        this.collision2Music.play();
   
-      
       } else if (snitch.top > this.height) {
         snitch.element.remove();
         this.snitch.splice(i, 1);
@@ -106,28 +127,31 @@ class Game {
   }
   
 
-  
   updateStats() {
     document.getElementById("score").textContent = this.score;
     document.getElementById("lives").textContent = this.lives;
   }
 
   spawnObstacles() {
-    if (Math.random() > 0.60 && this.obstacles.length < 2) {
-      this.obstacles.push(new Obstacle(this.gameScreen));
+    // Adjust the obstacle spawn rate based on difficulty
+    if (Math.random() > this.obstacleSpawnRate && this.obstacles.length < this.numBludgers) {
+      const obstacle = new Obstacle(this.gameScreen);
+      obstacle.speed = this.obstacleSpeed; 
+      this.obstacles.push(obstacle);
     }
   }
-
+  
   spawnSnitch() {
-    if (Math.random() > 0.60 && this.snitch.length < 1) {
+    if (Math.random() > this.snitchSpawnRate && this.snitch.length < 1) {
       this.snitch.push(new Snitch(this.gameScreen));
     }
   }
+  
 
   checkGameOver() {
     if (this.lives === 0) {
       this.endGame();
-      this.audio.pause();
+      this.audio.pause();  
       this.audio.currentTime = 0;
       this.menuAudio.play();
     }
@@ -140,8 +164,6 @@ class Game {
     this.gameIsOver = true;
     this.gameScreen.style.display = "none";
     this.gameEndScreen.style.display = "block";
-
     document.getElementById("final-score").textContent = this.score;
   }
-  
 }

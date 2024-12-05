@@ -4,7 +4,7 @@
 }
 
 body {
-  font-family: 'MyCustomFont', sans-serif;
+  font-family:'MyCustomFont' , sans-serif;
   background-color: #1b1b1b;
   color: #fff;
   margin: 0;
@@ -17,8 +17,8 @@ body {
 
 .container {
   position: relative;
-  width: 1280px; 
-  height: 720px; 
+  width: 1000px; 
+  height: 600px; 
   margin: auto;
 }
 
@@ -36,39 +36,37 @@ body {
   left: 50%;
   transform: translateX(-50%);
   color: white;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
 
 }
 
 
 .text {
-position: absolute; 
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-  color: white;
-  font-size: 1.3em;
-  max-width: 200px;
-  padding: 5px; 
-  border-radius: 50px; 
-  line-height: 1.2; 
-  display: center; /* Added to enable flexbox */
-  align-content: center;
- justify-content: center;
-}
-
-
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.3em;
+    max-width: 200px;
+    padding: 5px;
+    border-radius: 50px;
+    line-height: 1.2;
+    display: center; 
+    align-content: center;
+   justify-content: center;
+  }
 
 
 
 #start-button {
-  font-family: 'MyCustomFont', sans-serif;
+  font-family:'MyCustomFont' , sans-serif;
   position: absolute;
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: orange;
+  background-color:black;
   border: none;
   padding: 10px 20px;
   font-size: 2em;
@@ -80,6 +78,8 @@ transform: translate(-50%, -50%);
 #game-screen {
   display: none;
   align-content: center;
+  width: 1000px;
+  height: 600px;
   padding: 20px 0px;
   position: relative;
   background-size: cover;
@@ -108,8 +108,8 @@ transform: translate(-50%, -50%);
 #game-end {
   display: none;
   align-content: center;
-  width: 1280px;
-  height: 720px;
+  width: 1000px;
+  height: 600px;
   padding: 20px 0px;
   position: relative;
   
@@ -123,12 +123,12 @@ transform: translate(-50%, -50%);
 }
 
 #restart-button {
-  font-family: 'MyCustomFont', sans-serif;
+  font-family:'MyCustomFont' , sans-serif;
   position: absolute;
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: orange;
+  background-color: black;
   border: none;
   padding: 10px 20px;
   font-size: 2em;
@@ -146,4 +146,43 @@ transform: translate(-50%, -50%);
   color: black;
   font-size: 1.5em;
   font-weight: bold;
+}
+
+#difficulty-selection {
+  position: absolute;
+  bottom: 15%; 
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+#difficulty-selection p {
+  font-family: 'MyCustomFont', sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.difficulty-button {
+  font-family: 'MyCustomFont', sans-serif;
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.difficulty-button:hover {
+  background-color: #444;
+}
+
+.difficulty-button.active {
+  background-color: #4caf50; 
+  color: white;
+  font-weight: bold;
+  transform: scale(1.1); 
 }
