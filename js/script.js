@@ -46,6 +46,7 @@ window.onload = function () {
     game.start();
   }
 
+
   
   function handleKeydown(event) {
     const key = event.key;
@@ -70,6 +71,5 @@ window.onload = function () {
   }
 
   window.addEventListener("keydown", handleKeydown);
-};
-
-
+}
+  
