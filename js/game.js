@@ -48,19 +48,19 @@ class Game {
       this.snitchSpawnRate = 0.50;  
       this.obstacleSpeed = 2;       
       this.lives = 5;               
-      this.numBludgers = 1; // Easy - 1 bludger
+      this.numBludgers = 1; 
     } else if (level === "Medium") {
       this.obstacleSpawnRate = 0.83;
       this.snitchSpawnRate = 0.60;
       this.obstacleSpeed = 4;
       this.lives = 3;
-      this.numBludgers = 2; // Medium - 2 bludgers
+      this.numBludgers = 2; 
     } else if (level === "Hard") {
       this.obstacleSpawnRate = 0.70; 
       this.snitchSpawnRate = 0.70;  
       this.obstacleSpeed = 6;       
       this.lives = 2;               
-      this.numBludgers = 3; // Hard - 3 bludgers
+      this.numBludgers = 3; 
     }
   }
   
@@ -96,7 +96,7 @@ class Game {
 
         this.collision1Music.currentTime = 0; 
         this.collision1Music.play();
-        this.collision1Music.volume=0.3;
+        this.collision1Music.volume=0.5;
   
       } else if (obstacle.top > this.height) {
         obstacle.element.remove();
