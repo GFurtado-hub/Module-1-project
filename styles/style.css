@@ -1,5 +1,10 @@
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('../font/HARRYP__.TTF') format('woff2');
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'MyCustomFont', sans-serif;
   background-color: #1b1b1b;
   color: #fff;
   margin: 0;
@@ -12,10 +17,15 @@ body {
 
 .container {
   position: relative;
-  width: 1280px; 
-  height: 720px; 
+  width: 1000px;
+  height: 600px;
   margin: auto;
+  background-image: url('../images/first-image.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
 }
+
 
 .main-img {
   width: 100%;
@@ -30,49 +40,37 @@ body {
   top: 1%;
   left: 50%;
   transform: translateX(-50%);
-  color: black;
+  color: white;
   font-size: 1.5em;
   font-weight: bold;
 
 }
 
 
-.left-text {
+
+.text {
   position: absolute;
-  top: 35%;
-  left: 2%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
-  font-size: 1.1em;
+  font-size: 1.3em;
   max-width: 200px;
-  background-color: rgba(0, 0, 0, 0.7); 
-  padding: 5px; 
-  border-radius: 50px; 
-  line-height: 1.2; 
-  display: flex; /* Added to enable flexbox */
- 
+  padding: 5px;
+  border-radius: 50px;
+  line-height: 1.2;
+
 }
 
-
-.right-text {
-  position: absolute;
-  top: 35%;
-  right: 2%;
-  color: white;
-  font-size: 1.1em;
-  background-color: rgba(0, 0, 0, 0.7); 
-  max-width: 150px;
-  padding: 5px; 
-  border-radius: 50px; 
-  line-height: 1.2; 
-}
 
 
 #start-button {
+  font-family: 'MyCustomFont', sans-serif;
   position: absolute;
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: orange;
+  background-color: black;
   border: none;
   padding: 10px 20px;
   font-size: 2em;
@@ -81,29 +79,53 @@ body {
   border-radius: 50px;
 }
 
+#play-music {
+  font-family: 'MyCustomFont', sans-serif;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color:black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+#play-music:hover {
+  background-color:black;
+}
+
+
 #game-screen {
-  display: none;
-  align-content: center;
-  padding: 20px 0px;
+ display: none;
+  width: 1000px;
+  height: 600px;
+  padding: 20px 0;
   position: relative;
   background-size: cover;
-  
+
 }
+
+
 
 .game-img {
   position: relative;
-  width: 100%; 
-  height: 100%; 
+  width: 100%;
+  height: 100%;
   border-radius: 8px;
 }
 
 
 .game-stats {
   position: absolute;
-  top: 25px; 
-  left: 5px; 
-  background-color: rgba(0, 0, 0, 0.6); 
-  color: #fff; 
+  top: 25px;
+  left: 5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
   padding: 10px;
   border-radius: 8px;
 }
@@ -111,27 +133,27 @@ body {
 
 #game-end {
   display: none;
-  align-content: center;
-  width: 1280px;
-  height: 720px;
-  padding: 20px 0px;
+  width: 1000px;
+  height: 600px;
+  padding: 20px 0;
   position: relative;
-  
+
 }
 
 .logo-img {
   position: relative;
-  width: 100%; 
-  height: 100%; 
+  width: 100%;
+  height: 100%;
   border-radius: 8px;
 }
 
 #restart-button {
+  font-family: 'MyCustomFont', sans-serif;
   position: absolute;
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: orange;
+  background-color: black;
   border: none;
   padding: 10px 20px;
   font-size: 2em;
@@ -150,3 +172,98 @@ body {
   font-size: 1.5em;
   font-weight: bold;
 }
+
+#difficulty-selection {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+#difficulty-selection p {
+  font-family: 'MyCustomFont', sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.difficulty-button {
+  font-family: 'MyCustomFont', sans-serif;
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.difficulty-button:hover {
+  background-color: #444;
+}
+
+.difficulty-button.active {
+  background-color: #db2626;
+  color: white;
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    height: auto;
+  }
+
+  .main-img, .game-img, .logo-img {
+    height: auto;
+    max-height: 70vh;
+    border-radius: 5px;
+  }
+
+  .title-text, .final-text {
+    font-size: 1.2em;
+  }
+
+  .text {
+    font-size: 1em;
+    max-width: 90%;
+    line-height: 1.4;
+  }
+
+  #start-button, #restart-button {
+    font-size: 1.5em;
+    padding: 8px 15px;
+  }
+
+  .game-stats {
+    top: 10px;
+    left: 5px;
+    font-size: 0.9em;
+  }
+
+  #difficulty-selection p {
+    font-size: 1.2em;
+  }
+
+  .difficulty-button {
+    font-size: 1em;
+    padding: 8px 15px;
+  }
+
+  #game-screen {
+    width: 100%;
+    height: auto;
+  }
+
+  #game-end {
+    width: 100%;
+    height: auto;
+  }
+
+}
+ 

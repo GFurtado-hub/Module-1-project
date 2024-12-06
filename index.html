@@ -11,26 +11,33 @@
         <div id="game-start" class="container">
             
             <div class="title-text">
-                <h1>Harry Potter <br> IronHack Snitch Game</h1>
+                <h1>HARRY POTTER <br> IronHack Snitch Game</h1>
             </div>
 
             
-            <div class="left-text">
-                <p>You’re the new Gryffindor Seeker; <br>
-                during 60 sec you’ll have to <br>
-                catch as many snitches as you <br>
+            <div class="text">
+                <p>You are the new Gryffindor Seeker; <br>
+                Catch as many snitches as you <br>
                 can while avoiding enchanted <br>
                 bludgers! <br>
-                Be careful, you only have 3 lives.</p>
+                Be careful, this might be your last game.</p>
+                <p>Use the arrows <br> to move Harry</p>
             </div>
 
-            
-            <div class="right-text">
-                <p>Use the arrows <br> left ⬅ and ➡ right <br> to move Harry</p>
+                
+                <button id="play-music" onclick="playMusic()">Francesco Torchia & Goncalo Furtado</button>
             </div>
-
+            <audio id="bg-music" src="/music/quidditch_world_cup.mp3" preload="auto"></audio>
             
-            <img src="images/first-image.webp" alt="Main menu" class="main-img">
+           </main>
+        </div>
+
+            <div id="difficulty-selection">
+                <p>Select Difficulty:</p>
+                <button id="easy" class="difficulty-button">Easy</button>
+                <button id="medium" class="difficulty-button active">Medium</button>
+                <button id="hard" class="difficulty-button">Hard</button>
+              </div>
 
            
             <button id="start-button">START GAME</button>
@@ -61,6 +68,36 @@
         
         <button id="restart-button">Restart</button>
     </div>
+
+    
+<audio id="game-start-music" loop>
+    <source src="music/quidditch_world_cup.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+
+<audio id="background-music" loop>
+    <source src="music/double_trouble.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+
+<audio id="menu-music" loop>
+    <source src="music/harry_potter_theme.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+
+<audio id="bludgers-music">
+    <source src="music/ouch.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+<audio id="snitch-music">
+    <source src="music/mario_coin.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
     
     
     
